@@ -285,7 +285,7 @@ const MapComponent = () => {
 
 const GoogleMap = () => {
   return (
-    <Wrapper apiKey={"AIzaSyAcQSk83d9ZK27tyGgcirUvW2PcnIClGq8"} render={render}>
+    <Wrapper apiKey={"Google_api"} render={render}> 
       <MapComponent />
     </Wrapper>
   );
