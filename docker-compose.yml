@@ -1,0 +1,20 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  frontend:
+    image: https://gcr.io/evacuation-assignment-2022/backend 
+    build: ./Frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  backend:
+    image: https://gcr.io/evacuation-assignment-2022/backend
+    build: ./Backend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - MONGO_DB_CONNECTION_STRING=mongodb+srv://lasat17:l130298s@cluster0.z4cbqrv.mongodb.net/?retryWrites=true&w=majority
+      - MONGO_DB_NAME=MongoDatabase
+      - REDIS_URI=redis://default:24uFaYrn2Y8Nbaec86MJR4QLGm2j8ARY@redis-12394.c1.us-central1-2.gce.cloud.redislabs.com:12394
